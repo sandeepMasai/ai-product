@@ -38,47 +38,38 @@ An AI-powered product search application that allows users to discover products 
 
 ---
 
-## 📁 Folder Structure
-ai-product
-│
-├── backend   
-│   │   ├── config          #  OpenAI config
-│   │   │   └── openai.js
-│   │   │
-│   │   ├── controllers     # request handlers
-│   │   │   ├── productController.js
-│   │   │   └── aiController.js
-│   │   │
-│   │   ├── routes          # all routes
-│   │   │   ├── productRoutes.js
-│   │   │   └── aiRoutes.js
-│   │   │           # static data / mock data
-│   │   │   └── products.js
-│   │   │
-│   │   └── server.js       # entry point
-│   │
+## 📁 Project Structure
+
+ai-product/
+├── backend/
+│   ├── config/
+│   │   └── openai.js          # OpenAI client/config
+│   ├── controllers/
+│   │   ├── productController.js   # Handlers for product routes
+│   │   └── aiController.js        # Handler for AI ask route
+│   ├── routes/
+│   │   ├── productRoutes.js   # /api/products routes
+│   │   └── aiRoutes.js        # /api/ask route
+│   ├── products.js            # Static/mock product data
+│   ├── index.js
+# Express app entry point
 │   ├── .env
 │   ├── .env.example
 │   ├── package.json
 │   └── README.md
 │
-├── frontend
-│   ├── src            # axios config & API calls
-│   │   │   └── api.js
-│   │   │
-│   │   ├── assets          # images/icons
-│   │   │
-│   │   ├── components      # reusable UI components
-│   │   │   ├── ProductCard.jsx
-│   │   │   ├── CategoryFilter.jsx
-│   │   │   └── AskAI.jsx
-│   │   │   └── Home.jsx
-│   │   │
-│   │   │
+├── frontend/
+│   ├── src/
+│   │   ├── api.js             # Axios config and API helper functions
+│   │   ├── assets/            # Images/icons (if any)
+│   │   ├── components/
+│   │   │   ├── ProductCard.jsx   # Product display card
+│   │   │   ├── CategoryFilter.jsx# Category dropdown
+│   │   │   └── AskAI.jsx         # Ask box / AI search UI
+│   │   ├── Home.jsx           # Main page layout
 │   │   ├── App.jsx
 │   │   ├── main.jsx
 │   │   └── index.css
-│   │
 │   ├── .env
 │   ├── .env.example
 │   ├── package.json
@@ -86,7 +77,8 @@ ai-product
 │
 ├── .gitignore
 ├── README.md
-└── package.json (optional for concurrent run)
+└── package.json (optional root for concurrent run)
+
 
 
 ---
@@ -128,3 +120,18 @@ Request body:
 {
   "query": "best SSD under 9000"
 }
+
+
+🌍 Deployment Notes (Render)
+You are using:
+Frontend: https://ai-product-1.onrender.com
+Backend: https://ai-product-3l6p.onrender.com
+Make sure:
+Backend has CORS configured to allow the frontend origin:
+https://ai-product-1.onrender.com
+Frontend has VITE_API_BASE_URL set in Render environment:
+https://ai-product-3l6p.onrender.com/api
+Frontend service build settings:
+Build command: npm install && npm run build
+Publish directory: dist
+Then redeploy frontend so API calls hit the correct backend.
