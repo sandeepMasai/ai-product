@@ -43,8 +43,11 @@ function Home() {
 
       <AskAI setProducts={setProducts} setSummary={setSummary} />
 
-      <CategoryFilter allProducts={allProducts} onFilter={loadProducts} />
+      <div className="home-header">
+        <h1>AI Product Discovery</h1>
 
+        <CategoryFilter allProducts={allProducts} onFilter={loadProducts} />
+      </div>
       <h3 className="home-summary">{summary}</h3>
 
       {loading && <p className="home-loading">Loading...</p>}
