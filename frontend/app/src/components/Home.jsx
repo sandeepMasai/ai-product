@@ -111,9 +111,11 @@ function Home() {
         </p>
 
         <div className="mt-10 overflow-hidden">
-          <div className="flex gap-6 transition-transform duration-500 ease-out"
-               style={{ transform: `translateX(-${activeFeature * 100}%)` }}>
-            {features.map((feature, index) => (
+          <div
+            className="flex gap-6 transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${activeFeature * 100}%)` }}
+          >
+            {features.map((feature) => (
               <article
                 key={feature.title}
                 className="min-w-full shrink-0 px-1 sm:min-w-[50%] md:min-w-[33.33%] lg:min-w-[25%]"
