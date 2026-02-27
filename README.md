@@ -239,19 +239,6 @@ ai-product-discovery/
 
 ---
 
-## ✅ Evaluator Checklist
 
-Use this when testing the submission:
-
-- [ ] Clone repo, run `npm install` in both `backend` and `frontend`.
-- [ ] Set `OPENAI_API_KEY` in `backend/.env` (no keys in code).
-- [ ] Start backend (`npm start` in backend) and frontend (`npm run dev` in frontend).
-- [ ] Open http://localhost:3000 — app loads without errors.
-- [ ] Product list is visible; category filter works.
-- [ ] “Ask about products” works: enter a query (e.g. *"budget laptops"*), click Ask, see summary and matching products.
-- [ ] Backend exposes **GET /api/products** and **POST /api/ask** (LLM-backed).
-- [ ] README clearly explains how to run and which env vars are needed.
-
----
 
 **Built for the Full-Stack Development Assessment (AI/LLM Integration).**
